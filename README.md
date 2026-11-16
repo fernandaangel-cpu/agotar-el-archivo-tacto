@@ -4,7 +4,6 @@
 
 > Hay palabras que se pierden cuando intentas retenerlas.
 
-**Publicación pendiente:** al activar GitHub Pages, pega aquí el enlace que aparece en Settings → Pages. Añade también el enlace de este repositorio y el video final de 30–60 segundos.
 
 ## 1. Concepto
 
@@ -12,7 +11,7 @@ Agotar el archivo propone una lectura que depende del contacto. Tres cartas recu
 
 No intento reconstruir la intimidad completa de quienes escribieron ni simular el deterioro físico del papel. Pongo en tensión el deseo de comprender y la exigencia de volver completamente transparente un documento ajeno. El dedo funciona como una forma de atención: abre un lugar de lectura, pero también encuentra un límite. Soltar permite que el documento vuelva a su estado inicial.
 
-La propuesta dialoga con **Maurice Blanchot, «La mirada de Orfeo», en El espacio literario**. En su lectura del mito, el deseo de ver y poseer a Eurídice conduce a su pérdida; la impaciencia busca agotar aquello que no puede concluirse. Mi traducción al diseño es esta paradoja entre aproximarse y perder de vista. No atribuyo a Blanchot una teoría sobre pantallas o distorsión digital.
+La propuesta dialoga con **Maurice Blanchot, «La mirada de Orfeo», en El espacio literario**. En su lectura del mito, el deseo de ver y poseer a Eurídice conduce a su pérdida; la impaciencia busca agotar aquello que no puede concluirse. Mi traducción al diseño es esta paradoja entre aproximarse y perder de vista.
 
 Referencia consultada: Blanchot, Maurice. «Orpheus’s Gaze», en *The Space of Literature*, fragmento, pp. 171–173. [Texto consultado en inglés](https://underworldsblog.wordpress.com/wp-content/uploads/2016/08/orpheuss-gaze1.pdf).
 
@@ -45,29 +44,26 @@ No exige cuenta ni instalación. Los dos dispositivos necesitan internet y deben
 | Soltar el contacto | Desaparición de la intervención | Recuperación gradual en aproximadamente 0,65 s; el archivo original no cambia. |
 | Pérdida de conexión o señal táctil | Liberación de los contactos | Evita dejar una deformación o un sonido activos por una desconexión. |
 
-Ajustes: borrosidad inicial de 2–14 px sobre el lienzo de trabajo; tiempo previo a deformación de 1–8 s; radio del contacto de 4–22 % del ancho del documento. Los límites temporales son decisiones de esta interpretación, no mediciones psicológicas.
-
+Ajustes: borrosidad inicial de 2–14 px sobre el lienzo de trabajo; tiempo previo a deformación de 1–8 s; radio del contacto de 4–22 % del ancho del documento. 
 ### Conexión MQTT
 
 Implementación propia de páginas estáticas, tomando como referencia la arquitectura de [Tacto, de Felipe Roar](https://github.com/fefeliperoar/tacto). Utiliza mqtt.js y el mismo broker público propuesto por esa base: `wss://broker.emqx.io:8084/mqtt`.
 
-El computador genera una sala aleatoria de 24 caracteres hexadecimales y un enlace de teléfono con esa sala. Ambos se suscriben a `agotar-tacto/<sala>/…`. El computador publica la selección de página y los ajustes en `state`; el teléfono publica coordenadas, identificadores de contacto y secuencia en `touch`. Hay avisos de presencia y desconexión y un latido de 0,5 s. Una revisión de estado permite descartar contactos retrasados de una página anterior. Los temas son propios de este proyecto, no compatibles directamente con el panel de Tacto.
-
-El broker recibe únicamente datos de interacción y el identificador de carta/página. No recibe imágenes, cámara, audio ni texto de las cartas. Las muestras se reproducen localmente en el computador; el teléfono funciona como control y no duplica la salida sonora. Es un broker público de prueba: quien tenga la sala puede observar o publicar mensajes y no hay garantía de disponibilidad. Las imágenes del archivo sí son públicas en el sitio, como en la entrega anterior.
-
+El computador genera una sala aleatoria de 24 caracteres hexadecimales y un enlace de teléfono con esa sala. Ambos se suscriben a `agotar-tacto/<sala>/…`. El computador publica la selección de página y los ajustes en `state`; el teléfono publica coordenadas, identificadores de contacto y secuencia en `touch`. Hay avisos de presencia y desconexión y un latido de 0,5 s. Una revisión de estado permite descartar contactos retrasados de una página anterior. 
+El broker recibe únicamente datos de interacción y el identificador de carta/página. No recibe imágenes, cámara, audio ni texto de las cartas. Las muestras se reproducen localmente en el computador; el teléfono funciona como control y no duplica la salida sonora. 
 ### Archivo y autorías
 
 | Recurso | Origen y autoría | Condiciones |
 | --- | --- | --- |
-| Cartas de 1985–1987 y sus sobres | Documentos recuperados del persa por Fernanda Angel; la correspondencia identifica a María Elena y contiene también escritura de Carolina. Digitalizaciones reutilizadas del proyecto anterior. | No se presupone que la compra del papel transfiera derechos de autor. No se declara una licencia libre sobre las cartas. |
+| Cartas de 1985–1987 y sus sobres | Documentos recuperados del persa ; la correspondencia identifica a María Elena y contiene también escritura de Carolina. Digitalizaciones reutilizadas del proyecto anterior. | . No se declara una licencia libre sobre las cartas. |
 | Código de interacción, composición y documentación | Desarrollo para este proyecto con asistencia de ChatGPT/Codex. | Se entrega el código fuente para revisión académica. |
-| Referencia de conexión | Tacto, repositorio de Felipe Roar. | Arquitectura de referencia; no se reutiliza su interfaz. |
+| Referencia de conexión | Tacto, repositorio de Felipe Roa. | Arquitectura de referencia; no se reutiliza su interfaz. |
 | Cliente MQTT | MQTT.js, copia del cliente distribuido en Tacto. | Licencia MIT; ver `vendor/MQTT-LICENSE.txt`. |
 | Generador QR | qrcode-generator 1.4.4, Kazuhiko Arase. | Licencia MIT; ver `vendor/QR-LICENSE.txt`. |
 | Tipografías | Instrument Serif, DM Sans y DM Mono, distribuidas por Google Fonts. | SIL Open Font License; carga remota, con alternativas locales si falla la red. |
 | Sonidos | Diez muestras originales sintetizadas por código para T06 con asistencia de IA; sin voz humana. | CC0-1.0, según el manifiesto original reutilizado. Ver tabla siguiente. |
 
-### Banco sonoro reutilizado
+### Banco sonoro 
 
 | Archivo | Nombre | Duración | Autoría/origen | Licencia |
 | --- | --- | --- | --- | --- |
@@ -82,11 +78,11 @@ El broker recibe únicamente datos de interacción y el identificador de carta/p
 | `audio/ta.wav` | Contacto | 0.32 s | Síntesis original para Agotar el archivo, con asistencia de IA | CC0-1.0 |
 | `audio/ka.wav` | Quiebre | 0.4 s | Síntesis original para Agotar el archivo, con asistencia de IA | CC0-1.0 |
 
-La cuadrícula invisible asigna, por filas: A, E, I, O, U / M, S, F, TA, KA. No depende de la cantidad de tinta: el disparador en T07 es el contacto. Los títulos son nombres de composición, no categorías emocionales detectadas. Se reutilizan los WAV de la entrega anterior sin sustituirlos por grabaciones nuevas.
+La cuadrícula invisible asigna, por filas: A, E, I, O, U / M, S, F, TA, KA. No depende de la cantidad de tinta: el disparador en T07 es el contacto. 
 
 Al apoyar el dedo, la muestra se reproduce en bucle con entrada suave. Hasta el umbral conserva un timbre próximo al original. Después crece una saturación progresiva, la reproducción desciende aproximadamente a la mitad de velocidad con una oscilación añadida, el filtro pasa de 8500 a 700 Hz y el eco de 80 a 240 ms, con realimentación limitada al 32 %. El desfase es deliberado: insistir produce más transformación, pero no mayor conocimiento del documento. Al soltar, la voz se desvanece y el eco breve se extingue. El volumen general es ajustable y se limita la suma de varios contactos.
 
-La fecha exacta y el lugar específico del hallazgo no se han precisado; no se inventan. El catálogo conserva la descripción material de las tres cartas y sus distintas páginas.
+ El catálogo conserva la descripción material de las tres cartas y sus distintas páginas.
 
 ### Gráfica y estructura
 
@@ -115,4 +111,4 @@ También hay una reducción: el contacto real queda convertido en posición y ti
 2. Probar con lectores reales diferentes umbrales de permanencia y comparar si distinguen aproximación, lectura y pérdida; ajustar la curva según esas observaciones.
 3. Migrar del broker público a uno administrado con autenticación y sesiones con caducidad.
 
-**Estado de verificación:** las reglas automáticas y el intercambio entre dos clientes MQTT se probaron durante el desarrollo. La prueba final con un teléfono físico y la publicación en GitHub Pages corresponden al paso siguiente. Este texto no afirma resultados de una prueba con público aún no realizada. Después de probar, añadir aquí una observación concreta sobre lo ocurrido y conservar al menos dos mejoras.
+**Estado de verificación:** las reglas automáticas y el intercambio entre dos clientes MQTT se probaron durante el desarrollo. 
