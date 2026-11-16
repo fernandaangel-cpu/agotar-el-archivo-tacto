@@ -11,7 +11,7 @@ if(!phone&&!/^[a-f0-9]{24}$/.test(room||'')){room=newRoom();const u=new URL(loca
 if(!phone){const u=new URL(location.href);u.searchParams.set('sala',room);history.replaceState(null,'',u.href);}
 if(phone)window.addEventListener('hashchange',()=>{if(new URLSearchParams(location.hash.slice(1)).get('sala')!==room)location.reload();});
 const device=(phone?'tel-':'mesa-')+newRoom().slice(0,10),base=`agotar-tacto/${room}`,canvas=$('surface'),ctx=canvas.getContext('2d');
-let manifest=[],state={letter:'1985',page:3,blur:8,delay:1.8,radius:9},image=null,blurred=document.createElement('canvas'),contacts=[],trails=[],lastTouch=0,lastPhone=0,mouseMode=false,client=null,remoteOwner=null,stateVersion=0,loadToken=0,points=new Map(),seq=0,lastSeq=-1;
+let manifest=[],state={letter:'1985',page:3,blur:8,delay:2.5,radius:9},image=null,blurred=document.createElement('canvas'),contacts=[],trails=[],lastTouch=0,lastPhone=0,mouseMode=false,client=null,remoteOwner=null,stateVersion=0,loadToken=0,points=new Map(),seq=0,lastSeq=-1;
 const status=t=>$('connection').textContent=t;
 canvas.addEventListener('contextmenu',e=>e.preventDefault());
 const send=(suffix,payload,retain=false)=>{if(client?.connected)client.publish(base+'/'+suffix,JSON.stringify(payload),{qos:0,retain});};
