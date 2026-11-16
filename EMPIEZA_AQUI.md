@@ -1,3 +1,15 @@
+# Actualizar la versión publicada
+
+Esta revisión corrige el desenfoque en iPhone, permite leer al deslizar y adelanta la deformación. También elimina el panel de ajustes y cambia el texto final.
+
+1. En GitHub entra a tu repositorio y pulsa Add file → Upload files.
+2. Desde este ZIP descomprimido sube: `index.html`, `telefono.html`, `app.js`, `interaction.mjs`, `blur.mjs`, `sound.js`, `style.css` y esta documentación. Deben quedar en la raíz.
+3. No necesitas volver a subir `letters`, `audio` ni `vendor` si ya están completas. No sobrescribas tu README personalizado sin conservar antes los enlaces que añadiste.
+4. Pulsa Commit changes, espera el despliegue y recarga el computador con ⌘ + Mayúsculas + R.
+5. Cierra la pestaña anterior del teléfono y vuelve a escanear el QR. Prueba nitidez al deslizar y deformación al detenerte.
+
+---
+
 # Publicar y probar — paso a paso
 
 Este es un proyecto NUEVO para T07. No reemplaces tu repositorio anterior `agotar-el-archivo` de T06.
@@ -30,11 +42,11 @@ Esta versión incluye diez sonidos de la entrega anterior. No requiere excepció
 1. En el computador, elige una de las cartas y una página de escritura.
 2. Pulsa **Activar sonido** en el computador y empieza con volumen bajo. Espera «MQTT conectado» y escanea el QR con tu teléfono. Abre el enlace del QR, no escribas simplemente la dirección principal del sitio.
 3. Comprueba que ambos muestran la misma carta.
-4. Apoya el dedo sobre una palabra. En menos de un segundo debe aclararse la zona.
-5. Sin moverlo, espera unos 3 segundos: la escritura debe comenzar a desplazarse en franjas y el sonido debe perder claridad, variar de tono y generar un eco.
+4. Apoya el dedo sobre una palabra. La zona debe aclararse prácticamente al instante en ambas pantallas.
+5. Sin moverlo, espera alrededor de medio segundo: la escritura debe comenzar a desplazarse en franjas y el sonido debe perder claridad, variar de tono y generar un eco.
 6. Suelta. La zona vuelve gradualmente a su estado borroso.
 7. Desliza para recorrer otra línea; cambia al menos una carta y comprueba que el teléfono se actualiza.
-8. Prueba los controles de borrosidad, tiempo y área. Si cuesta leer, aumenta el área y baja la borrosidad.
+8. Comprueba que deslizar mantiene la zona legible y que detenerte más de 0,55 s inicia la deformación. No hay panel de ajustes en esta versión.
 9. Haz la prueba con datos móviles y con Wi-Fi si es posible. No necesitan la misma red; sí internet.
 
 ## 5. Si algo falla
@@ -53,7 +65,7 @@ Esta versión incluye diez sonidos de la entrega anterior. No requiere excepció
 2. Reemplaza el párrafo «Publicación pendiente» por el enlace real del repositorio, el enlace que muestra Pages y el enlace del video cuando lo subas.
 3. Después de probar, añade a la reflexión una observación real: qué hiciste, qué ocurrió y qué ajustarías. No necesitas cambiar el concepto.
 4. Graba 30–60 segundos donde se vean a la vez el teléfono y el computador. Puedes filmarlos desde otro celular: así se comprueba el control remoto, cosa que una captura de pantalla sola no demuestra.
-5. Guion de 45 segundos: 0–8 s nombre y elección de carta; 8–18 s tocar y aclarar; 18–30 s sostener y deformar; 30–38 s soltar y recorrer; 38–45 s cambiar el tiempo de insistencia y repetir.
+5. Guion de 45 segundos: 0–8 s nombre y elección de carta; 8–18 s tocar y aclarar; 18–30 s sostener y deformar; 30–38 s soltar y recorrer; 38–45 s cambiar la carta y repetir.
 6. Sube el video a un lugar accesible por enlace o al medio que admita la entrega. Si usas YouTube, déjalo «No listado», no «Privado». Prueba el enlace sin tu sesión.
 
 ## 7. Lista final según la pauta
