@@ -1,0 +1,5 @@
+export const clamp=(v,a=0,b=1)=>Math.max(a,Math.min(b,v));
+export function normalizePoints(points){return Array.isArray(points)?points.slice(0,5).filter(p=>Number.isFinite(p.x)&&Number.isFinite(p.y)&&Number.isInteger(p.id)).map(p=>({id:p.id,x:clamp(p.x),y:clamp(p.y)})):[];}
+export function stage(seconds,delay){return seconds<.7?'Acercarse.':seconds<delay?'Leer.':'La insistencia deforma.';}
+export function reconcile(previous,points,now,aspect=1){return normalizePoints(points).map(p=>{const old=previous.find(o=>o.id===p.id);const stayed=old&&Math.hypot(p.x-old.anchorX,(p.y-old.anchorY)/aspect)<.035;return {...p,anchorX:stayed?old.anchorX:p.x,anchorY:stayed?old.anchorY:p.y,start:stayed?old.start:now,last:now};});}
+export function validState(s,manifest){const letter=manifest.find(l=>l.id===s?.letter);return !!letter&&Number.isInteger(s.page)&&s.page>=0&&s.page<letter.pages.length&&Number.isFinite(s.blur)&&s.blur>=2&&s.blur<=14&&Number.isFinite(s.delay)&&s.delay>=1&&s.delay<=8&&Number.isFinite(s.radius)&&s.radius>=4&&s.radius<=22;}
